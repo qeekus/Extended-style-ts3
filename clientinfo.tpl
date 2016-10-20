@@ -81,6 +81,18 @@ PLUGIN_INFO_DATA
   .red {
     color: red;
   }
+  .green {
+	color: green;
+  }
+  .black {
+	color: black;
+  }
+  .grey {
+	color: grey;
+  }
+  .firebrick {
+	color: firebrick;
+  }
 </style>
 
 <table id="info">
@@ -105,8 +117,7 @@ PLUGIN_INFO_DATA
     <td>%%CLIENT_CONNECTED_SINCE%%</td>
   </tr>
   <tr><td class="label">Created:</td><td>%%CLIENT_CREATED%%</td></tr>
-  <tr><td class="label">Connections:</td><td>%%CLIENT_TOTALCONNECTIONS%%</td></tr>
-  <tr><td class="label">Last Connection:</td><td>%%CLIENT_LASTCONNECTED%%</td></tr>
+  <tr><td class="label">Last / Total:</td><td>%%?CLIENT_LASTCONNECTED%% (<text class="firebrick">%%?CLIENT_TOTALCONNECTIONS%%</text>)</td></tr>
   </table>
 
 <table id="list">
@@ -121,5 +132,20 @@ PLUGIN_INFO_DATA
   <tr><td class="red"><br />*** Client requested Talk Power at <b>%%?CLIENT_TALK_REQUEST_TIME%%</b>.</td></tr>
   <tr><td class="red">&nbsp;&nbsp;&nbsp;&nbsp;(%%?CLIENT_TALK_REQUEST_MSG%%)</td></tr>
 </table>
-
+<hr />
 <table style="padding-top: 6px;">%%?PLUGIN_INFO_DATA%%</table>
+<hr />
+<table class="InfoFrame_Table">
+	<tr>
+		<td class="label">Search:</td>
+		<td class="infotext"><a href="http://www.tsviewer.com/index.php?page=search&action=ausgabe_user&nickname=%%CLIENT_NAME_PERCENT_ENCODED%%">Nickname(TSViewer)</a>
+			&nbsp;/&nbsp;<a href="http://www.gametracker.com/search/?search_by=online_offline_player&query=%%CLIENT_NAME_PERCENT_ENCODED%%">Nickname(GameTracker)</a>
+			&nbsp;/&nbsp;<a href="http://ts3index.com/?page=searchclient&nickname=%%CLIENT_NAME_PERCENT_ENCODED%%">Nickname(TS3Index)</a>
+			&nbsp;/&nbsp;<a href="https://www.google.de/search?q=%%CLIENT_NAME_PERCENT_ENCODED%%">Nickname(Google)</a>
+			&nbsp;/&nbsp;<a href="http://www.gametracker.com/search/?search_by=profile_username&query=%%CLIENT_NAME_PERCENT_ENCODED%%">Profil(GameTracker)</a>
+			&nbsp;/&nbsp;<a href="http://ts3index.com/?page=searchclient&uid=%%CLIENT_UNIQUE_ID%%">UID(TS3Index)</a>
+			&nbsp;/&nbsp;<a href="https://www.google.de/search?q=%%CLIENT_UNIQUE_ID%%">UID(Google)</a>
+			&nbsp;/&nbsp;<a href="http://www.tsviewer.com/index.php?page=search&action=ausgabe&suchbereich=ansprechpartner&suchinhalt=%%CLIENT_NAME_PERCENT_ENCODED%%">Besitzer(TSViewer)</a>
+		</td>
+	</tr>
+</table>
